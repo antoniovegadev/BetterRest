@@ -45,6 +45,7 @@ struct ContentView: View {
                         Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                             Text("\(sleepAmount, specifier: "%g") hours")
                         }
+                        .accessibility(value: Text("\(sleepAmount, specifier: "%g") hours"))
                     }
                     
                     Section(header: Text("Daily coffee intake")) {
@@ -60,6 +61,8 @@ struct ContentView: View {
                     }
                 }
                 
+                Spacer()
+                
                 Group {
                     Text("Bedtime")
                         .offset(y: 80)
@@ -70,7 +73,6 @@ struct ContentView: View {
                         .overlay(Circle().stroke(Color.green, lineWidth: 5))
                         
                 }
-                .offset(y: -200)
                 
                 Spacer()
  
